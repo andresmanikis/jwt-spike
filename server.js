@@ -5,7 +5,7 @@ const app = express();
 app.use(express.static('static'));
 
 app.get('/api/authorized-resource', authenticate, (req, res) => {
-  res.end('You made it to the authorized resource!');
+  res.end('Hi ' + req.user.name + '! You made it to the authorized resource!');
 });
 
 app.get('/api/open-resource', (req, res) => {
