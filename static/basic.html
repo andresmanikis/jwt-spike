@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JWT example</title>
+  </head>
+  <body>
+    <h1>JWT example</h1>
+    <p>
+      This is a basic example. You have two buttons.
+    </p>
+
+    <p>
+      The first button makes a GET request to an authorized resource. To get there you will need a valid JWT token. For example, a valid one is <a id="valid-token" href="#">this one</a> and it holds a name inside its payload. Once you press the button you should see the response from the server in the console. Try changing the token or corrupting it (just deleting or changing a char will do the trick) and see what happens.
+    </p>
+
+    <p>
+      The second button makes a GET request to an open resource. You can get there whenever you like with any token.
+    </p>
+
+    <textarea id="token" type="text" placeholder="Paste token here" rows="6" cols="50"></textarea> <br>
+    <button id="get-auth-resource">GET authorized resource</button> <br>
+    <button id="get-open-resource">GET open resource</button>
+
+    <script src="jquery.js"></script>
+    <script src="basic.js"></script>
+  </body>
+</html>

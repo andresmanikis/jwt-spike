@@ -1,5 +1,5 @@
 $(function() {
-  console.log('Frontend running...');
+  var VALID_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiBEb2UifQ.xuEv8qrfXu424LZk8bVgr9MQJUIrp1rHcPyZw_KSsds';
 
   $('#get-auth-resource').click(function() {
     $.ajax({
@@ -10,8 +10,6 @@ $(function() {
     }).done(function(data) {
       console.log('RESPONSE: ' + data);
     });
-
-    $('#token').focus();
   });
 
   $('#get-open-resource').click(function() {
@@ -22,5 +20,9 @@ $(function() {
     });
   });
 
-  $('#token').focus();
+  $('#valid-token').click(function() {
+    $('#token').val(VALID_TOKEN)
+  });
+
+  console.log('Frontend running...');
 });
