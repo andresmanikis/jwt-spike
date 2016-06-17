@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "start": "node app.js",
-    "watch": "nodemon -L app.js"
+    "start": "node server.js",
+    "watch": "nodemon -L server.js"
   },
   "dependencies": {
     "express": "^4.14.0"
