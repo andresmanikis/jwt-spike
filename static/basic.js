@@ -20,7 +20,8 @@ $(function() {
     });
   });
 
-  $('#valid-token').click(function() {
+  $('#valid-token').click(function(e) {
+    e.preventDefault();
     $('#token').val(VALID_TOKEN)
   });
 
