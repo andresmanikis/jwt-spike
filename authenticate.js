@@ -1,5 +1,5 @@
 const authenticate = (req, res, next) => {
-  throw new Error('Cannot authenticate user')  ;
+  res.end(req.get('Authorization'));
 };
 
 module.exports = authenticate;
