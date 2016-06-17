@@ -1,9 +1,9 @@
 $(function() {
   var VALID_TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiSm9obiBEb2UifQ.xuEv8qrfXu424LZk8bVgr9MQJUIrp1rHcPyZw_KSsds';
 
-  $('#get-auth-resource').click(function() {
+  $('#get-protected-resource').click(function() {
     $.ajax({
-      url: '/api/authorized-resource',
+      url: '/api/protected-resource',
       headers: {
         Authorization: 'Bearer ' + $('#token').val()
       }

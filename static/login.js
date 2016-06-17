@@ -16,7 +16,7 @@ function getOpenResource() {
 
 function getProtectedResource() {
   $.ajax({
-    url: '/api/authorized-resource',
+    url: '/api/protected-resource',
     headers: {
       Authorization: 'Bearer ' + localStorage.getItem('token')
     }
