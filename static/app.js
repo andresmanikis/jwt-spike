@@ -1,3 +1,3 @@
 $(function() {
-  alert('HI');
+  console.log('Frontend running...');
 });
