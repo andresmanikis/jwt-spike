@@ -6,11 +6,13 @@
   </head>
   <body>
     <h1>JWT example</h1>
-    <p>
-      Try to GET /api/authorized-resource
-    </p>
 
-    <button id="get-with-auth-header">GET with auth header</button>
+    <button id="get-auth-resource">GET authorized resource</button>
+    <input id="token" type="text" placeholder="token" />
+    <br>
+    <button id="get-open-resource">GET open resource</button>
+    <br>
+    <code>(Valid token: valid.token)</code>
 
     <script src="jquery.js"></script>
     <script src="app.js"></script>

@@ -1,5 +1,10 @@
+
 const authenticate = (req, res, next) => {
-  res.end(req.get('Authorization'));
+  if (req.get('Authorization') === 'Bearer valid.token') {
+    next();
+  } else {
+    res.status(401).end();
+  }
 };
 
 module.exports = authenticate;
