@@ -1,5 +1,5 @@
 const express = require('express');
-const authenticate = require('./authenticate');
+const auth = require('./auth');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static('static'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/protected-resource', authenticate, (req, res) => {
+app.get('/api/protected-resource', auth.checkToken, (req, res) => {
   res.end('Hi ' + req.user.name + '! You made it to the protected resource!');
 });
 
