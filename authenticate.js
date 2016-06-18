@@ -5,11 +5,10 @@ const authenticate = (req, res, next) => {
 
   try {
     req.user = jwt.verify(token, 'secret')
+    next();
   } catch(err) {
     res.status(401).end();
   }
-
-  next();
 };
 
 module.exports = authenticate;
