@@ -6,12 +6,35 @@
   </head>
   <body>
     <h1>Login JWT example</h1>
+
     <p>
       This is a login example using JWT.
     </p>
 
+    <p>
+      You have two resources: one protected and one open. The open is freely available. The protected needs you to be logged in.
+    </p>
+
+    <p>
+      For now you can login just by pressing the link that appears in the message below. Clicking there logs you in as "John Doe" and gives you a token with that information inside.
+    </p>
+
+    <p>
+      A further example should ask you to provide credentials and, upon checking them in the server, should give you the token or kick you out.
+    </p>
+
+    <p>
+      Open your console to see the result of your actions.
+    </p>
+
+    <hr>
+
     <p id="not-logged-in-message" style="display:none">
       You don't appear to be logged in. Click <a id="login" href="#">here</a> to do so.
+    </p>
+
+    <p id="logged-in-message" style="display:none">
+      You are logged in. Click <a id="logout" href="#">here</a> to log out.
     </p>
 
     <button id="get-protected-resource">GET protected resource</button> <br>

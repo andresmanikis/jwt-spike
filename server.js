@@ -1,5 +1,6 @@
 const express = require('express');
 const authenticate = require('./authenticate');
+const jwt = require('jsonwebtoken');
 const app = express();
 
 app.use(express.static('static'));
@@ -10,6 +11,10 @@ app.get('/api/protected-resource', authenticate, (req, res) => {
 
 app.get('/api/open-resource', (req, res) => {
   res.end('You made it to the open resource!');
+});
+
+app.get('/login', (req, res) => {
+  res.end(jwt.sign({ name: 'John Doe' }, 'secret'));
 });
 
 app.listen(3000, () => console.log('Listening on port 3000...'));
