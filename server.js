@@ -2,6 +2,7 @@ const express = require('express');
 const auth = require('./auth');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+
 const app = express();
 
 app.use(express.static('static'));
@@ -16,8 +17,13 @@ app.get('/api/open-resource', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  console.log(req.body);
-  res.end(jwt.sign({ name: 'John Doe' }, 'secret'));
+  const credentials = req.body;
+
+  if (auth.checkCredentials(credentials)) {
+    res.end(auth.generateToken(credentials));
+  } else {
+    res.status(401).end();
+  }
 });
 
 app.listen(3000, () => console.log('Listening on port 3000...'));
