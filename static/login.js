@@ -1,12 +1,19 @@
 $(function() {
   var loginForm;
 
+  function getUserFromToken(token) {
+    return JSON.parse(atob(token.split('.')[1]));
+  }
+
   function checkLogin() {
-    if (localStorage.getItem('token') === null) {
+    var token = localStorage.getItem('token');
+
+    if (token === null) {
       $('#not-logged-in-message').show();
       $('#logged-in-message').hide();
     } else {
       $('#not-logged-in-message').hide();
+      $('#logged-in-message span').html(getUserFromToken(token).name);
       $('#logged-in-message').show();
     }
   }
