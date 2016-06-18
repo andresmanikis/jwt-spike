@@ -4,6 +4,7 @@
     "watch": "nodemon -L server.js"
   },
   "dependencies": {
+    "body-parser": "^1.15.1",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.0.1"
   },

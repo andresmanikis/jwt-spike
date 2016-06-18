@@ -30,12 +30,18 @@
     <hr>
 
     <p id="not-logged-in-message" style="display:none">
-      You don't appear to be logged in. Click <a id="login" href="#">here</a> to do so.
+      You don't appear to be logged in. Click <a id="show-login-form" href="#">here</a> to do so.
     </p>
 
     <p id="logged-in-message" style="display:none">
       You are logged in. Click <a id="logout" href="#">here</a> to log out.
     </p>
+
+    <form id="login-form" action="/login" method="post" style="display:none">
+      <input type="text" name="user" placeholder="user" />
+      <input type="password" name="password" placeholder="Password" />
+      <input type="submit" value="Login"/>
+    </form>
 
     <button id="get-protected-resource">GET protected resource</button> <br>
     <button id="get-open-resource">GET open resource</button>

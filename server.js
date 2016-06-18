@@ -1,9 +1,11 @@
 const express = require('express');
 const authenticate = require('./authenticate');
 const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
 const app = express();
 
 app.use(express.static('static'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/api/protected-resource', authenticate, (req, res) => {
   res.end('Hi ' + req.user.name + '! You made it to the protected resource!');
@@ -13,7 +15,8 @@ app.get('/api/open-resource', (req, res) => {
   res.end('You made it to the open resource!');
 });
 
-app.get('/login', (req, res) => {
+app.post('/login', (req, res) => {
+  console.log(req.body);
   res.end(jwt.sign({ name: 'John Doe' }, 'secret'));
 });
 
