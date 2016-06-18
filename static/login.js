@@ -46,6 +46,12 @@ $(function() {
       localStorage.setItem('token', token);
       loginForm.trigger('reset').hide();
       checkLogin();
+    }).fail(function() {
+      loginForm.find('input').css('background-color', 'red');
+      setTimeout(function() {
+        loginForm.find('input').css('background-color', '');
+      }, 250);
+      loginForm.find('input').first().focus();
     });
   }
 
